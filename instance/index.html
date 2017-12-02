@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://unpkg.com/vue"></script>
+<link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
+</head>
+<body>
+    <div id="app">
+        <div v-bind:title="ramdomNum">Hover me to get your random number!</div>
+    </div>
+    <script>
+    var app = new Vue({
+        el: "#app",
+        data:{
+            ramdomNum : Math.floor(Math.random() * 50 + 1)
+        }
+    })
+    </script>
+</body>
+</html>
