@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://unpkg.com/vue"></script>
+<link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
+</head>
+<body>
+    <div id="app">
+       <ul>Hooks
+           <li v-for="hook in hooks">{{hook.name}}</li>
+       </ul>
+    </div>
+    <script>
+    var app = new Vue({
+        el: "#app",
+        data:{
+           hooks:[
+                {
+                    priority:1,
+                    name:'Created',
+                    description:'Executed when create elements.'
+                },
+                {
+                    priority:2,
+                    name:'Mounted'
+                },
+                {
+                    priority:3,
+                    name:'Updated',
+                    description:'tracing elements'
+                },
+           ]
+        },
+        
+    })
+    </script>
+</body>
+</html>
