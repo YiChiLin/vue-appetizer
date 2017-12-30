@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://unpkg.com/vue"></script>
+<link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
+</head>
+<body>
+    <div id="app">
+       <ul>
+           <li v-for="color in colors" v-if="color.primary">{{color.text}}</li>
+       </ul>
+    </div>
+    <script>
+    var app = new Vue({
+        el: "#app",
+        data:{
+            colors:[
+                {
+                    text: 'orange',
+                    primary: false
+                },
+                {
+                    text: 'red',
+                    primary: true
+                },
+                {
+                    text: 'green',
+                    primary: false
+                },
+                {
+                    text: 'orange',
+                    primary: false
+                }
+            ]
+        }
+    })
+    </script>
+</body>
+</html>
