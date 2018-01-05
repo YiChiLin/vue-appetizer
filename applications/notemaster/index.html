@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group">
                     <select v-model="note.color">
-                        <option v-for="color in colors" value="test">{{color.color}}</option>
+                        <option v-for="color in colors" v-bind:value="color.priority">{{color.color}}</option>
                     </select>
                 </div>
                 <button class="btn btn-primary" @click="addNote">Add Note</button>
@@ -94,6 +94,14 @@
                             date: new Date(Date.now()).toLocaleString()
                         }
                     )
+                    for(let i = 0; i < this.notes.length;i++){
+                        var firstItem = this.notes[i];
+                        var secondItem = this.notes[i+1];
+                        if(firstItem.priority > secondItem.priority){
+                            this.notes[i] = secondItem;
+                            this.notes[i+1] = firstItem;
+                        }
+                    }
                 },
                 removeNote(index) {
                     this.notes.splice(index, 1);
