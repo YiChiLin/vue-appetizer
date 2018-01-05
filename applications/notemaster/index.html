@@ -22,6 +22,11 @@
                     <label>Note Context</label>
                     <textarea class="form-control" type="text" v-model="note.text"></textarea>
                 </div>
+                <div class="form-group">
+                    <select v-model="note.color">
+                        <option v-for="color in colors" value="test">{{color.color}}</option>
+                    </select>
+                </div>
                 <button class="btn btn-primary" @click="addNote">Add Note</button>
             </div>
         </div>
@@ -33,35 +38,59 @@
                         <h4 class="card-title">{{note.title}}</h4>
                         <h6 class="card-subtitle mb-2 text-muted">{{note.date}}</h6>
                         <p class="card-text">{{note.text}}</p>
+                        <p class="card-color">{{note.color}}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
+        var colors = [
+            {
+                color: 'Red',
+                priority: 1,
+            },
+            {
+                color: 'Yellow',
+                priority: 2,
+            },
+            {
+                color: 'Green',
+                priority: 3,
+            },
+            {
+                color: 'White',
+                priority: 4,
+            }
+        ];
+
         var app = new Vue({
             el: '#app',
             data: {
+                colors,
                 title: 'Notemaster',
                 note: {
                     title: '',
-                    text: ''
+                    text: '',
+                    color: ''
                 },
                 notes: [
                     {
                         title: 'Life In Germany',
                         text: 'After almost two years.',
+                        color: 'Green',
                         date: new Date(Date.now()).toLocaleString()
                     }
                 ]
             },
             methods: {
                 addNote() {
-                    let { title, text } = this.note;
+                    let { title, text, color } = this.note;
                     this.notes.push(
                         {
                             title: title,
                             text: text,
+                            color: color,
                             date: new Date(Date.now()).toLocaleString()
                         }
                     )
