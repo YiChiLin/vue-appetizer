@@ -16,6 +16,8 @@ Just for personal workout.
 
 - Lifecycle hooks like created, mounted, and updated allow vue instances to run specific code throughout its lifespan.
 
+- Props is an array. Data can pass down to the child components.
+
 [Reference from Vue JS 2.0 - Mastering Web Apps by 
 David Katz in Udemy]
 
