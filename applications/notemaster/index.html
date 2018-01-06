@@ -93,13 +93,13 @@
                             date: new Date(Date.now()).toLocaleString()
                         }
                     )
-                    for(let i = 0; i < this.notes.length;i++){
-                        if(i != this.notes.length - 1){
+                    for (let i = 0; i < this.notes.length; i++) {
+                        if (i != this.notes.length - 1) {
                             var firstItem = this.notes[i];
-                            var secondItem = this.notes[i+1];
-                            if(firstItem.priority > secondItem.priority){
+                            var secondItem = this.notes[i + 1];
+                            if (firstItem.priority > secondItem.priority) {
                                 this.notes[i] = secondItem;
-                                this.notes[i+1] = firstItem;
+                                this.notes[i + 1] = firstItem;
                             }
                         }
                     }
