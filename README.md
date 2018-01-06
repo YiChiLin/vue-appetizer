@@ -18,3 +18,21 @@ Just for personal workout.
 
 [Reference from Vue JS 2.0 - Mastering Web Apps by 
 David Katz in Udemy]
+
+## Tools
+#### vue-cli 
+- A simple CLI(Command Line Interface) for scaffolding Vue.js projects. Creating Vue project quickly.
+- Install
+``` bash
+$ npm install vue-cli -g
+```
+- Usage
+``` bash
+$ vue init <template-name> <project-name>
+
+$ vue init webpack my-project
+```
+- Run webpack web server. 
+``` bash
+$ npm run dev
+```
