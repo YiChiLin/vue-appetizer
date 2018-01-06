@@ -23,7 +23,7 @@
                     <textarea class="form-control" type="text" v-model="note.text"></textarea>
                 </div>
                 <div class="form-group">
-                    <select v-model="note.color">
+                    <select v-model="note.priority">
                         <option v-for="color in colors" v-bind:value="color.priority">{{color.color}}</option>
                     </select>
                 </div>
@@ -38,7 +38,6 @@
                         <h4 class="card-title">{{note.title}}</h4>
                         <h6 class="card-subtitle mb-2 text-muted">{{note.date}}</h6>
                         <p class="card-text">{{note.text}}</p>
-                        <p class="card-color">{{note.color}}</p>
                     </div>
                 </div>
             </div>
@@ -72,34 +71,36 @@
                 note: {
                     title: '',
                     text: '',
-                    color: ''
+                    priority: ''
                 },
                 notes: [
                     {
                         title: 'Life In Germany',
                         text: 'After almost two years.',
-                        color: 'Green',
+                        priority: 3,
                         date: new Date(Date.now()).toLocaleString()
                     }
                 ]
             },
             methods: {
                 addNote() {
-                    let { title, text, color } = this.note;
+                    let { title, text, priority } = this.note;
                     this.notes.push(
                         {
                             title: title,
                             text: text,
-                            color: color,
+                            priority: priority,
                             date: new Date(Date.now()).toLocaleString()
                         }
                     )
                     for(let i = 0; i < this.notes.length;i++){
-                        var firstItem = this.notes[i];
-                        var secondItem = this.notes[i+1];
-                        if(firstItem.priority > secondItem.priority){
-                            this.notes[i] = secondItem;
-                            this.notes[i+1] = firstItem;
+                        if(i != this.notes.length - 1){
+                            var firstItem = this.notes[i];
+                            var secondItem = this.notes[i+1];
+                            if(firstItem.priority > secondItem.priority){
+                                this.notes[i] = secondItem;
+                                this.notes[i+1] = firstItem;
+                            }
                         }
                     }
                 },
