@@ -31,10 +31,15 @@ $ npm install vue-cli -g
 - Usage
 ``` bash
 $ vue init <template-name> <project-name>
-
+$ vue init webpack-simple <project-name>
 $ vue init webpack my-project
 ```
 - Run webpack web server. 
 ``` bash
 $ npm run dev
+```
+- Install vue-router
+-- save flag will update our package.json. 
+``` bash
+$ npm install vue-router -- save
 ```
