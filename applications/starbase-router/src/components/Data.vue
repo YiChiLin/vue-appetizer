@@ -25,7 +25,7 @@ export default {
   methods:{
     fetchItems(){
       this.items = [];
-      let initial_ids = [1,13,10];
+      let initial_ids = [1,13,14];
       this.type = this.$route.params.type;
       for(let i in initial_ids){
         let id = initial_ids[i];
@@ -33,6 +33,7 @@ export default {
         .then(response =>response.json())
         .then(json=>this.items.push(json))
       }
+      console.log('Item = ',this.items[0]);
     }
   },
   created(){
