@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 //using {} is because mutations is not export as default
 import { mutations } from './mutations'
+import * as actions from './actions'
 
 Vue.use(Vuex)
 
@@ -12,5 +13,6 @@ const state = {
 
 export default new Vuex.Store({
     state,
-    mutations
+    mutations,
+    actions
 })
