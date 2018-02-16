@@ -73,6 +73,12 @@ $ npm install vuex -- save
 - Previous app is using local data in each component. However, when you encounter multiple components share the same state or actions from different components may need to mutate same piece of state, it will be hard to maintain.
 - Therefore,it extract share state into one global store for the applicaiton.
 
+### Three steps of vuex recipe
+> Add Store 
+
+> Add Mutation
+
+> Add Action
 #### Store Entry Point
 - index.js
 

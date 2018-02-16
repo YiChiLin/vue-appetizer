@@ -1,5 +1,12 @@
 <template>
   <div class="">
-    Dashboard Component
+    Dashboard Component 
+    {{this.$store}}
   </div>
 </template>
+
+<script>
+export default {
+ }
+</script>
+
