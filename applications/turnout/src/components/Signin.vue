@@ -9,13 +9,12 @@
       <br>
       <p>{{error.message}}</p>
     </div>
+    <router-link to="/signup">Not a user? Sign up</router-link>
   </div>
 </template>
 
 <script>
-  import {
-    firebaseApp
-  } from '../firebaseApp'
+  import { firebaseApp } from '../firebaseApp'
 
   export default {
     data() {
