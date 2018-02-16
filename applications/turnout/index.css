@@ -8,9 +8,9 @@
     margin-top: 60px;
 }
 
-.joke-card{
-    border: 2px solid #2C3350;
-    border-radius: 2px;
-    padding: 5px;
-    margin: 5px;
+.signout-btn{
+    position: absolute;
+    text-align: right;
+    top: 60px;
+    right: 40px;
 }

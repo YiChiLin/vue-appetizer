@@ -75,19 +75,22 @@ $ npm install vuex -- save
 
 ### Three steps of vuex recipe
 > Add Store 
-
+- **The store** creates the global state object.
 > Add Mutation
-
+- **Mutation** is the only way to change the state.
+- Mutation only can handle sync event.
 > Add Action
+- **Actions** commit mutations. It call these mutations to actually change the state.
+- It can handle async event and communication with mutation via commit.
+
+
 #### Store Entry Point
 - index.js
 
 #### Flow
+- All starts from **actions**
+- Vue Component dispatch action -> action will trigger commit function with mutation type -> mutation will change state -> View update display data.
+- The reason for why cannot direct call mutation is because that we want to make sure the data in **mutation** is all instantly, no need to wait server response. So mutation can update data to view instantly.
 - Trigger state change with **commit**. 
 (The reason for using commit to change state instead of using store.state.xxx is because this can be more explicitly trace. This convention make debugging more easier.)
 ![Image from vuejs.org](./imgs/vuex.png)
-
-#### Three Items in the Vuex Recipe
-- **The store** creates the global state object.
-- **Mutation** is the only way to change the state.
-- **Actions** commit mutations. It call these mutations to actually change the state.
